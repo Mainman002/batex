@@ -1,6 +1,6 @@
 bl_info = {
     "name" : "Batex",
-    "author" : "jayanam",
+    "author" : "jayanam, jm",
     "descrtion" : "Batch export as Fbx",
     "blender" : (2, 80, 0),
     "version" : (0, 3, 1, 1),
@@ -23,6 +23,24 @@ bpy.types.Scene.export_folder = StringProperty(name="Export folder",
 bpy.types.Scene.center_transform = BoolProperty(name="Center transform",
                 default=True,
                 description="Set the pivot point of the object to the center")
+
+bpy.types.Scene.apply_transform = BoolProperty(name="Apply transform",
+                default=True,
+                description="Applies experimental scale and transforms")
+
+bpy.types.Scene.apply_modifiers = BoolProperty(name="Apply modifiers",
+                default=True,
+                description="Applies modifiers")
+
+#bpy.types.Scene.include_textures = BoolProperty(name="Include textures",     ### Doesn't seem to do anything ###
+                #default=False,
+                #description="Inludes textures into the fbx file")
+
+bpy.types.Scene.export_scale = FloatProperty(name="Export scale",
+                default=1.0,
+                min=0.01,
+                max=10.0,
+                description="Sets the exported model scale")
 
 bpy.types.Scene.export_smoothing = EnumProperty(
     name="Smoothing",

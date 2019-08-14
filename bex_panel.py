@@ -21,6 +21,18 @@ class BatEx_PT_Panel(Panel):
         row = layout.row()
         row.prop(context.scene, "center_transform", text="Center transform")
 
+        row = layout.row()
+        row.prop(context.scene, "apply_transform", text="Apply transform")
+
+        row = layout.row()
+        row.prop(context.scene, "apply_modifiers", text="Apply modifiers")
+
+        #row = layout.row()
+        #row.prop(context.scene, "include_textures", text="Include textures")    ### Doesn't seem to do anything ###
+
+        row = layout.row()
+        row.prop(context.scene, "export_scale", text="Export scale")
+
         row_smooth = layout.row()
         col_smooth_lbl = row_smooth.column()
         col_smooth_lbl.label(text="Smoothing:")

@@ -6,6 +6,10 @@ class BatEx_Export:
   def __init__(self, context):
     self.__context = context
     self.__export_folder = context.scene.export_folder
+    self.__export_applyTransform = context.scene.apply_transform
+    self.__export_applyModifiers = context.scene.apply_modifiers
+    #self.__export_includeTextures = context.scene.include_textures     ### Doesn't seem to do anything ###
+    self.__export_exportScale = context.scene.export_scale
     self.__center_transform = context.scene.center_transform
     self.__export_objects = context.selected_objects
   
@@ -41,6 +45,10 @@ class BatEx_Export:
       use_armature_deform_only=True,
       mesh_smooth_type=self.__context.scene.export_smoothing,
       add_leaf_bones=False,
+      global_scale=self.__export_exportScale,
+      bake_space_transform=self.__export_applyTransform,
+      use_mesh_modifiers=self.__export_applyModifiers,
+      #embed_textures=self.__export_includeTextures,    ### Doesn't seem to do anything ###
       path_mode='ABSOLUTE')
 
       if old_pos is not None:
