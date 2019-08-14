@@ -1,6 +1,6 @@
 bl_info = {
     "name" : "Batex",
-    "author" : "jayanam, jm",
+    "author" : "jayanam",
     "descrtion" : "Batch export as Fbx",
     "blender" : (2, 80, 0),
     "version" : (0, 3, 1, 1),
